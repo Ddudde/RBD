@@ -34,7 +34,7 @@ public class Start extends Application {
 
     public static String usename;
 
-    public static String path = System.getenv("APPDATA") + "\\CompMagaz\\data";
+    public static String path = System.getenv("APPDATA") + "\\CompMagaz\\data1";
 
     public static List<String> off_replace = new ArrayList<>();
 
