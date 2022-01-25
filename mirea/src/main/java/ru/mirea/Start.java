@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.extern.slf4j.Slf4j;
 import ru.mirea.Controllers.ModelController;
+import ru.mirea.Controllers.ProjController;
 import ru.mirea.Controllers.StartController;
 import ru.mirea.data.User;
 import ru.mirea.data.DataImpl;
@@ -50,13 +51,13 @@ public class Start extends Application {
         primStage.setResizable(false);
         //load_users();
         //load_commands();
-        start_scene("/fxml/start.fxml");
-        ((StartController)loader.getController()).onLogos();
+        //start_scene("/fxml/start.fxml");
+        //((StartController)loader.getController()).onLogos();
         //starts();
-        start_spring();
+        //start_spring();
         //close_start();
-        //start_scene("/fxml/project.fxml");
-        //((ProjController)loader.getController()).init();
+        start_scene("/fxml/project.fxml");
+        ((ProjController)loader.getController()).init();
     }
 
     private static List<Integer> cont(List<String> list, String log)

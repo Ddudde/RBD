@@ -18,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import ru.mirea.MireaApplication;
 import ru.mirea.Start;
 import ru.mirea.data.User;
@@ -35,7 +37,7 @@ public class ProjController extends ModelController{
 
     private int id = 1;
 
-    public DataImpl dataImpl = (DataImpl) MireaApplication.ctx.getBean("usersImpl");
+    public DataImpl dataImpl;// = (DataImpl) MireaApplication.ctx.getBean("usersImpl");
 
     @FXML
     private Label usern;
@@ -87,6 +89,9 @@ public class ProjController extends ModelController{
     @FXML
     private Pane BM;
 
+    @FXML
+    private WebView webmap;
+
     private boolean caps_lock = false;
 
     private Pane act_pane;
@@ -99,7 +104,7 @@ public class ProjController extends ModelController{
 
     public void init()
     {
-        user = dataImpl.getuser(Start.usename);
+        //user = dataImpl.getuser(Start.usename);
         if(user != null)
         {
             usern.setText(Start.usename);
@@ -116,9 +121,11 @@ public class ProjController extends ModelController{
         set_caps();
         act_pane = (Pane) Start.roots.get("id_" + id);
         p_edit.getScene().addEventHandler(KeyEvent.KEY_RELEASED, this::caps);
-        toMain();
+        //toMain();
         if(next_id == -1) onNavV();
-        super.init();
+        //super.init();
+        WebEngine webEngine = webmap.getEngine();
+        webEngine.load("https://yandex.ru/map-widget/v1/?um=constructor%3Abbe1c6998b6c380aa3d4725123f54d465d8f43861aa738b01acfa6bae8219955&amp;source=constructor");
     }
 
     public void browse_3535() throws URISyntaxException, IOException {
