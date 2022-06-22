@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import ru.mirea.Start;
-import ru.mirea.data.User;
+import ru.mirea.data.model.User;
 
 import java.awt.*;
 import java.io.IOException;

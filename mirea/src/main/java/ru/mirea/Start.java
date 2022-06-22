@@ -10,8 +10,7 @@ import javafx.stage.WindowEvent;
 import lombok.extern.slf4j.Slf4j;
 import ru.mirea.Controllers.ModelController;
 import ru.mirea.Controllers.ProjController;
-import ru.mirea.Controllers.StartController;
-import ru.mirea.data.User;
+import ru.mirea.data.model.User;
 import ru.mirea.data.DataImpl;
 
 import java.io.File;
@@ -53,11 +52,11 @@ public class Start extends Application {
         //load_commands();
         //start_scene("/fxml/start.fxml");
         //((StartController)loader.getController()).onLogos();
-        //starts();
         //start_spring();
         //close_start();
         start_scene("/fxml/project.fxml");
-        ((ProjController)loader.getController()).init();
+        //((ProjController)loader.getController()).init();
+        start_spring();
     }
 
     private static List<Integer> cont(List<String> list, String log)
@@ -307,7 +306,8 @@ public class Start extends Application {
     }
 
     public static void starts() {
-        ((StartController)loader.getController()).init();
+        //((StartController)loader.getController()).init();
+        ((ProjController)loader.getController()).init();
     }
 
     public static void close_start()

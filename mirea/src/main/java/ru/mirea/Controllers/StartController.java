@@ -4,7 +4,6 @@ import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -27,8 +26,8 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 import ru.mirea.MireaApplication;
 import ru.mirea.Start;
-import ru.mirea.data.News;
-import ru.mirea.data.User;
+import ru.mirea.data.model.News;
+import ru.mirea.data.model.User;
 import ru.mirea.data.DataImpl;
 
 import java.awt.*;

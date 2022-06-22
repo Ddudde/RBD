@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -1636,7 +1638,7 @@
                      <DropShadow blurType="GAUSSIAN" height="4.0" offsetX="1.0" offsetY="1.0" radius="1.5" width="4.0" />
                   </effect>
                </Label>
-               <Pane fx:id="p_edit21" layoutX="349.0" layoutY="144.0" prefHeight="465.0" prefWidth="568.0">
+               <Pane fx:id="p_edit21" layoutX="349.0" layoutY="144.0" prefHeight="465.0" prefWidth="568.0" visible="false">
                   <children>
                      <Pane layoutX="34.0" layoutY="66.0" prefHeight="350.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
                         <children>
@@ -2339,7 +2341,7 @@
                      </Label>
                   </children>
                </Pane>
-               <Pane fx:id="p_edit21112" layoutX="349.0" layoutY="262.0" prefHeight="230.0" prefWidth="568.0" visible="false">
+               <Pane fx:id="p_edit21112" layoutX="349.0" layoutY="262.0" prefHeight="230.0" prefWidth="568.0">
                   <children>
                      <Pane layoutX="34.0" layoutY="66.0" prefHeight="146.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
                         <children>
@@ -2414,7 +2416,7 @@
          </Pane>
          <Pane fx:id="glavn2" layoutY="50.0" prefHeight="670.0" prefWidth="1265.0">
             <children>
-               <Pane prefHeight="50.0" prefWidth="1265.0" styleClass="auth" stylesheets="@../css/auth.css">
+               <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1280.0" styleClass="auth" stylesheets="@../css/auth.css">
                   <children>
                      <TextField fx:id="log112" layoutX="483.0" layoutY="8.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="300.0" promptText="Введите название книги...">
                         <effect>
@@ -2460,122 +2462,97 @@
                            </InnerShadow>
                         </effect>
                      </Button>
+                     <CheckBox layoutX="76.0" layoutY="16.0" mnemonicParsing="false" text="Фильтрация">
+                        <font>
+                           <Font name="Arial" size="14.0" />
+                        </font>
+                     </CheckBox>
+                  </children>
+               </Pane>
+               <Pane fx:id="p_edit221" layoutY="50.0" prefHeight="260.0" prefWidth="255.0" visible="false">
+                  <children>
+                     <Pane layoutX="38.0" layoutY="66.0" prefHeight="160.0" prefWidth="179.0" styleClass="auth" stylesheets="@../css/auth.css">
+                        <children>
+                           <Pane layoutX="15.0" layoutY="10.0" prefHeight="75.0" prefWidth="150.0">
+                              <children>
+                                 <Label text="Год издания">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="log1121" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
+                                    <effect>
+                                       <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                          <color>
+                                             <Color red="1.0" opacity="0.0" />
+                                          </color>
+                                          <input>
+                                             <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                                <color>
+                                                   <Color red="1.0" opacity="0.0" />
+                                                </color>
+                                             </DropShadow>
+                                          </input>
+                                       </InnerShadow>
+                                    </effect>
+                                 </TextField>
+                                 <Label layoutX="58.0" layoutY="32.0" text="—">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="log11211" layoutX="85.0" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
+                                    <effect>
+                                       <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                          <color>
+                                             <Color red="1.0" opacity="0.0" />
+                                          </color>
+                                          <input>
+                                             <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                                <color>
+                                                   <Color red="1.0" opacity="0.0" />
+                                                </color>
+                                             </DropShadow>
+                                          </input>
+                                       </InnerShadow>
+                                    </effect>
+                                 </TextField>
+                              </children>
+                              <effect>
+                                 <ColorAdjust brightness="0.5" />
+                              </effect>
+                           </Pane>
+                           <Pane layoutX="15.0" layoutY="85.0" prefHeight="75.0" prefWidth="150.0">
+                              <children>
+                                 <Label text="Жанр">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox editable="true" layoutY="25.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="Жанр(ы)" />
+                              </children>
+                              <effect>
+                                 <ColorAdjust brightness="0.5" />
+                              </effect>
+                           </Pane>
+                        </children>
+                     </Pane>
+                     <Label layoutX="54.0" layoutY="14.0" text="Фильтрация" textFill="WHITE">
+                        <font>
+                           <Font name="Times New Roman Bold" size="24.0" />
+                        </font>
+                     </Label>
                   </children>
                </Pane>
                <Pane layoutX="65.0" layoutY="103.0" prefHeight="465.0" prefWidth="1136.0">
                   <children>
-                     <Pane fx:id="p_edit221" prefHeight="465.0" prefWidth="568.0">
+                     <Pane fx:id="p_edit2211" layoutX="284.0" prefHeight="465.0" prefWidth="568.0">
                         <children>
                            <Pane layoutX="34.0" layoutY="66.0" prefHeight="383.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
                               <children>
-                                 <Pane layoutX="15.0" layoutY="10.0" prefHeight="75.0" prefWidth="300.0">
-                                    <children>
-                                       <Label text="Год издания">
-                                          <font>
-                                             <Font name="Arial Bold" size="18.0" />
-                                          </font>
-                                       </Label>
-                                       <TextField fx:id="log1121" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
-                                          <effect>
-                                             <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                <color>
-                                                   <Color red="1.0" opacity="0.0" />
-                                                </color>
-                                                <input>
-                                                   <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                      <color>
-                                                         <Color red="1.0" opacity="0.0" />
-                                                      </color>
-                                                   </DropShadow>
-                                                </input>
-                                             </InnerShadow>
-                                          </effect>
-                                       </TextField>
-                                       <Label layoutX="58.0" layoutY="32.0" text="—">
-                                          <font>
-                                             <Font name="Arial Bold" size="18.0" />
-                                          </font>
-                                       </Label>
-                                       <TextField fx:id="log11211" layoutX="85.0" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
-                                          <effect>
-                                             <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                <color>
-                                                   <Color red="1.0" opacity="0.0" />
-                                                </color>
-                                                <input>
-                                                   <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                      <color>
-                                                         <Color red="1.0" opacity="0.0" />
-                                                      </color>
-                                                   </DropShadow>
-                                                </input>
-                                             </InnerShadow>
-                                          </effect>
-                                       </TextField>
-                                    </children>
-                                 </Pane>
-                                 <Pane layoutX="15.0" layoutY="85.0" prefHeight="75.0" prefWidth="300.0">
-                                    <children>
-                                       <Label text="Жанр">
-                                          <font>
-                                             <Font name="Arial Bold" size="18.0" />
-                                          </font>
-                                       </Label>
-                                       <TextField fx:id="log11211" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
-                                          <effect>
-                                             <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                <color>
-                                                   <Color red="1.0" opacity="0.0" />
-                                                </color>
-                                                <input>
-                                                   <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                      <color>
-                                                         <Color red="1.0" opacity="0.0" />
-                                                      </color>
-                                                   </DropShadow>
-                                                </input>
-                                             </InnerShadow>
-                                          </effect>
-                                       </TextField>
-                                       <Label layoutX="58.0" layoutY="32.0" text="—">
-                                          <font>
-                                             <Font name="Arial Bold" size="18.0" />
-                                          </font>
-                                       </Label>
-                                       <TextField fx:id="log112111" layoutX="85.0" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
-                                          <effect>
-                                             <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                <color>
-                                                   <Color red="1.0" opacity="0.0" />
-                                                </color>
-                                                <input>
-                                                   <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
-                                                      <color>
-                                                         <Color red="1.0" opacity="0.0" />
-                                                      </color>
-                                                   </DropShadow>
-                                                </input>
-                                             </InnerShadow>
-                                          </effect>
-                                       </TextField>
-                                    </children>
-                                 </Pane>
-                              </children>
-                           </Pane>
-                           <Label layoutX="215.0" layoutY="14.0" text="Фильтрация" textFill="WHITE">
-                              <font>
-                                 <Font name="Times New Roman Bold" size="24.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </Pane>
-                     <Pane fx:id="p_edit2211" layoutX="568.0" prefHeight="465.0" prefWidth="568.0">
-                        <children>
-                           <Pane layoutX="34.0" layoutY="66.0" prefHeight="383.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
-                              <children>
-                                 <ScrollPane layoutX="11.0" layoutY="12.0" prefHeight="360.0" prefWidth="480.0" visible="false">
+                                 <ScrollPane layoutX="11.0" layoutY="12.0" prefHeight="360.0" prefWidth="480.0">
                                     <content>
-                                       <VBox spacing="5.0">
+                                       <VBox fx:id="vb_cat" spacing="10.0">
                                           <children>
                                              <Pane prefHeight="175.0" prefWidth="465.0" styleClass="panel" stylesheets="@../css/upanel.css">
                                                 <VBox.margin>
@@ -2611,6 +2588,16 @@
                                                       </font>
                                                    </Label>
                                                 </children>
+                                                <effect>
+                                                   <DropShadow blurType="ONE_PASS_BOX">
+                                                      <color>
+                                                         <Color red="1.0" green="0.5833333134651184" opacity="0.0" />
+                                                      </color>
+                                                   </DropShadow>
+                                                </effect>
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
                                              </Pane>
                                           </children>
                                           <padding>
@@ -2619,14 +2606,14 @@
                                        </VBox>
                                     </content>
                                  </ScrollPane>
-                                 <Label layoutX="46.0" layoutY="157.0" prefWidth="410.0" text="Увы, по вашему запросу ничего не найдено:(" textAlignment="CENTER" wrapText="true">
+                                 <Label layoutX="46.0" layoutY="157.0" prefWidth="410.0" text="Увы, по вашему запросу ничего не найдено:(" textAlignment="CENTER" visible="false" wrapText="true">
                                     <font>
                                        <Font name="System Bold" size="24.0" />
                                     </font>
                                  </Label>
                               </children>
                            </Pane>
-                           <Label layoutX="230.0" layoutY="14.0" text="Результат" textFill="WHITE">
+                           <Label fx:id="l_cat" layoutX="239.0" layoutY="14.0" text="Каталог" textFill="WHITE">
                               <font>
                                  <Font name="Times New Roman Bold" size="24.0" />
                               </font>

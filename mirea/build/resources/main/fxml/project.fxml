@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -200,7 +202,7 @@
                </Button>
             </Pane>
             <Pane fx:id="id_2" layoutX="306.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="320.0" prefWidth="654.0" visible="false">
-               <Label layoutX="66.0" layoutY="14.0" prefHeight="246.0" prefWidth="523.0" text="Вы на данный момент зарегистрированны в качестве читателя-гостя. И не можете заказывать книги при просмотре нашего электронного каталога. Чтоб получить возможность бронировать книги, необходимо подойти к библиотекарю и заполнить специальную форму. Обязательно при себе иметь паспорт!" textAlignment="CENTER" textFill="#ff9700" wrapText="true">
+               <Label layoutX="66.0" layoutY="14.0" prefHeight="246.0" prefWidth="523.0" text="Вы на данный момент зарегистрированны в качестве читателя-гостя. И не можете заказывать книги. Чтоб получить возможность бронировать книги, необходимо подойти к библиотекарю и заполнить специальную форму. Обязательно при себе иметь паспорт!" textAlignment="CENTER" textFill="#ff9700" wrapText="true">
                   <font>
                      <Font name="Times New Roman Bold" size="24.0" />
                   </font>
@@ -235,7 +237,7 @@
                </Button>
             </Pane>
          </Pane>
-         <Pane fx:id="cont" layoutY="50.0" prefHeight="670.0" prefWidth="1265.0">
+         <Pane fx:id="cont" layoutY="50.0" prefHeight="670.0" prefWidth="1265.0" visible="false">
             <Pane layoutX="297.0" layoutY="50.0" prefHeight="571.0" prefWidth="671.0">
                <Label layoutX="10.0" layoutY="15.0" onMouseClicked="#toContact" text="ТЕЛЕФОНЫ ДЛЯ СВЯЗИ" textAlignment="CENTER" textFill="#ff9700">
                   <font>
@@ -795,32 +797,9 @@
                </Button>
             </children>
          </Pane>
-         <Pane layoutX="358.0" layoutY="273.0" prefHeight="175.0" prefWidth="550.0" visible="false">
-            <children>
-               <Pane layoutX="168.0" layoutY="7.0" prefHeight="50.0" prefWidth="215.0">
-                  <children>
-                     <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../img/warning.png" />
-                        </image>
-                     </ImageView>
-                     <Label layoutX="30.0" layoutY="6.0" text="Внимание!" textFill="#c14503">
-                        <font>
-                           <Font name="Times New Roman Bold" size="36.0" />
-                        </font>
-                     </Label>
-                  </children>
-               </Pane>
-               <Label layoutX="14.0" layoutY="57.0" prefHeight="120.0" prefWidth="523.0" text="У вас не оформлен абонемент. Войдите во вкладку &quot;Подсказки&quot; и проследуйте инструкциям." textAlignment="CENTER" textFill="#ff9700" wrapText="true">
-                  <font>
-                     <Font name="Times New Roman Bold" size="24.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
          <Pane fx:id="edit1" layoutY="50.0" prefHeight="670.0" prefWidth="1265.0" visible="false">
             <children>
-               <Pane fx:id="p_edit1" layoutX="350.0" layoutY="115.0" prefHeight="400.0" prefWidth="568.0">
+               <Pane fx:id="p_edit1" layoutX="350.0" layoutY="115.0" prefHeight="400.0" prefWidth="568.0" visible="false">
                   <children>
                      <Pane layoutX="34.0" layoutY="66.0" prefHeight="320.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
                         <children>
@@ -897,6 +876,29 @@
                         </children>
                      </Pane>
                      <Label layoutX="200.0" layoutY="14.0" text="Ваш абонемент" textFill="WHITE">
+                        <font>
+                           <Font name="Times New Roman Bold" size="24.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="359.0" layoutY="248.0" prefHeight="175.0" prefWidth="550.0">
+                  <children>
+                     <Pane layoutX="168.0" layoutY="7.0" prefHeight="50.0" prefWidth="215.0">
+                        <children>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../img/warning.png" />
+                              </image>
+                           </ImageView>
+                           <Label layoutX="30.0" layoutY="6.0" text="Внимание!" textFill="#c14503">
+                              <font>
+                                 <Font name="Times New Roman Bold" size="36.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </Pane>
+                     <Label layoutX="14.0" layoutY="57.0" prefHeight="120.0" prefWidth="523.0" text="У вас не оформлен абонемент. Войдите во вкладку &quot;Подсказки&quot; и проследуйте инструкциям." textAlignment="CENTER" textFill="#ff9700" wrapText="true">
                         <font>
                            <Font name="Times New Roman Bold" size="24.0" />
                         </font>
@@ -1551,7 +1553,7 @@
                   <children>
                      <Pane fx:id="BN111" layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseEntered="#onNav" onMouseExited="#neNav" onMousePressed="#onPN" onMouseReleased="#nePN" prefHeight="45.0" prefWidth="512.0" styleClass="panel_adm" stylesheets="@../css/panel.css">
                         <children>
-                           <Label layoutX="106.0" layoutY="9.0" onMouseClicked="#toNews" prefHeight="28.0" text="Дополнение данных автора" textAlignment="CENTER" textFill="#ff9700">
+                           <Label layoutX="21.0" layoutY="9.0" onMouseClicked="#toNews" prefHeight="28.0" text="Дополнение данных автора" textAlignment="CENTER" textFill="#ff9700">
                               <font>
                                  <Font name="Times New Roman Bold" size="24.0" />
                               </font>
@@ -1574,7 +1576,30 @@
                      </Pane>
                      <Pane fx:id="BC111" maxHeight="-Infinity" maxWidth="-Infinity" onMouseEntered="#onNav" onMouseExited="#neNav" onMousePressed="#onPN" onMouseReleased="#nePN" prefHeight="45.0" prefWidth="512.0" styleClass="panel_adm" stylesheets="@../css/panel.css">
                         <children>
-                           <Label layoutX="79.0" layoutY="9.0" onMouseClicked="#toNews" prefHeight="28.0" text="Добавление паспортных данных" textAlignment="CENTER" textFill="#ff9700">
+                           <Label layoutX="8.0" layoutY="9.0" onMouseClicked="#toNews" prefHeight="28.0" text="Добавление паспортных данных" textAlignment="CENTER" textFill="#ff9700">
+                              <font>
+                                 <Font name="Times New Roman Bold" size="22.0" />
+                              </font>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                              <effect>
+                                 <Glow level="0.0">
+                                    <input>
+                                       <DropShadow blurType="GAUSSIAN" height="5.0" offsetX="1.0" offsetY="1.0" radius="2.0" spread="0.36" width="5.0">
+                                          <input>
+                                             <InnerShadow blurType="TWO_PASS_BOX" height="11.88" radius="5.470000000000001" width="12.0" />
+                                          </input>
+                                       </DropShadow>
+                                    </input>
+                                 </Glow>
+                              </effect>
+                           </Label>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="BC1111" maxHeight="-Infinity" maxWidth="-Infinity" onMouseEntered="#onNav" onMouseExited="#neNav" onMousePressed="#onPN" onMouseReleased="#nePN" prefHeight="45.0" prefWidth="512.0" styleClass="panel_adm" stylesheets="@../css/panel.css">
+                        <children>
+                           <Label layoutX="64.0" layoutY="9.0" onMouseClicked="#toNews" prefHeight="28.0" text="Оформление заказа" textAlignment="CENTER" textFill="#ff9700">
                               <font>
                                  <Font name="Times New Roman Bold" size="24.0" />
                               </font>
@@ -1613,7 +1638,7 @@
                      <DropShadow blurType="GAUSSIAN" height="4.0" offsetX="1.0" offsetY="1.0" radius="1.5" width="4.0" />
                   </effect>
                </Label>
-               <Pane fx:id="p_edit21" layoutX="349.0" layoutY="144.0" prefHeight="465.0" prefWidth="568.0">
+               <Pane fx:id="p_edit21" layoutX="349.0" layoutY="144.0" prefHeight="465.0" prefWidth="568.0" visible="false">
                   <children>
                      <Pane layoutX="34.0" layoutY="66.0" prefHeight="350.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
                         <children>
@@ -2314,6 +2339,287 @@
                            <Font name="Times New Roman Bold" size="24.0" />
                         </font>
                      </Label>
+                  </children>
+               </Pane>
+               <Pane fx:id="p_edit21112" layoutX="349.0" layoutY="262.0" prefHeight="230.0" prefWidth="568.0">
+                  <children>
+                     <Pane layoutX="34.0" layoutY="66.0" prefHeight="146.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
+                        <children>
+                           <TextField fx:id="log11113" layoutX="30.0" layoutY="20.0" onKeyReleased="#textch" prefHeight="50.0" prefWidth="300.0" promptText="Код абонемента">
+                              <effect>
+                                 <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                    <color>
+                                       <Color red="1.0" opacity="0.0" />
+                                    </color>
+                                    <input>
+                                       <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                          <color>
+                                             <Color red="1.0" opacity="0.0" />
+                                          </color>
+                                       </DropShadow>
+                                    </input>
+                                 </InnerShadow>
+                              </effect>
+                           </TextField>
+                           <Button defaultButton="true" layoutX="330.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#onedit" onMouseEntered="#onBut" onMouseExited="#neBut" onMousePressed="#onPRB" onMouseReleased="#nePRB" stylesheets="@../css/start.css" textFill="WHITE">
+                              <font>
+                                 <Font name="Times New Roman Bold" size="24.0" />
+                              </font>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                              <graphic>
+                                 <Label text="Добавить!" textFill="WHITE">
+                                    <font>
+                                       <Font name="Times New Roman Bold" size="24.0" />
+                                    </font>
+                                    <effect>
+                                       <DropShadow blurType="GAUSSIAN" height="5.0" offsetX="1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0" />
+                                    </effect>
+                                 </Label>
+                              </graphic>
+                              <effect>
+                                 <InnerShadow blurType="ONE_PASS_BOX" height="1.0" offsetY="-5.0" radius="0.0" width="0.0">
+                                    <input>
+                                       <Glow level="0.0" />
+                                    </input>
+                                    <color>
+                                       <Color red="1.0" green="1.0" blue="1.0" opacity="0.25" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                           <Pane fx:id="caps21112" layoutX="30.0" layoutY="90.0" prefHeight="41.0" prefWidth="175.0">
+                              <children>
+                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../img/warning.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label layoutX="34.0" layoutY="14.0" text="Включён Caps Lock!" textFill="#c14503">
+                                    <font>
+                                       <Font name="Times New Roman Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </Pane>
+                        </children>
+                     </Pane>
+                     <Label layoutX="177.0" layoutY="14.0" text="Оформление заказа" textFill="WHITE">
+                        <font>
+                           <Font name="Times New Roman Bold" size="24.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+            </children>
+         </Pane>
+         <Pane fx:id="glavn2" layoutY="50.0" prefHeight="670.0" prefWidth="1265.0">
+            <children>
+               <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1280.0" styleClass="auth" stylesheets="@../css/auth.css">
+                  <children>
+                     <TextField fx:id="log112" layoutX="483.0" layoutY="8.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="300.0" promptText="Введите название книги...">
+                        <effect>
+                           <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                              <color>
+                                 <Color red="1.0" opacity="0.0" />
+                              </color>
+                              <input>
+                                 <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                    <color>
+                                       <Color red="1.0" opacity="0.0" />
+                                    </color>
+                                 </DropShadow>
+                              </input>
+                           </InnerShadow>
+                        </effect>
+                     </TextField>
+                     <Button defaultButton="true" layoutX="854.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onedit" onMouseEntered="#onBut" onMouseExited="#neBut" onMousePressed="#onPRB" onMouseReleased="#nePRB" stylesheets="@../css/start.css" textFill="WHITE">
+                        <font>
+                           <Font name="Times New Roman Bold" size="24.0" />
+                        </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <graphic>
+                           <Label text="Поиск" textFill="WHITE">
+                              <font>
+                                 <Font name="Times New Roman Bold" size="24.0" />
+                              </font>
+                              <effect>
+                                 <DropShadow blurType="GAUSSIAN" height="5.0" offsetX="1.0" offsetY="1.0" radius="2.0" spread="0.5" width="5.0" />
+                              </effect>
+                           </Label>
+                        </graphic>
+                        <effect>
+                           <InnerShadow blurType="ONE_PASS_BOX" height="1.0" offsetY="-5.0" radius="0.0" width="0.0">
+                              <input>
+                                 <Glow level="0.0" />
+                              </input>
+                              <color>
+                                 <Color red="1.0" green="1.0" blue="1.0" opacity="0.25" />
+                              </color>
+                           </InnerShadow>
+                        </effect>
+                     </Button>
+                     <CheckBox layoutX="76.0" layoutY="16.0" mnemonicParsing="false" text="Фильтрация">
+                        <font>
+                           <Font name="Arial" size="14.0" />
+                        </font>
+                     </CheckBox>
+                  </children>
+               </Pane>
+               <Pane fx:id="p_edit221" layoutY="50.0" prefHeight="260.0" prefWidth="255.0" visible="false">
+                  <children>
+                     <Pane layoutX="38.0" layoutY="66.0" prefHeight="160.0" prefWidth="179.0" styleClass="auth" stylesheets="@../css/auth.css">
+                        <children>
+                           <Pane layoutX="15.0" layoutY="10.0" prefHeight="75.0" prefWidth="150.0">
+                              <children>
+                                 <Label text="Год издания">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="log1121" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
+                                    <effect>
+                                       <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                          <color>
+                                             <Color red="1.0" opacity="0.0" />
+                                          </color>
+                                          <input>
+                                             <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                                <color>
+                                                   <Color red="1.0" opacity="0.0" />
+                                                </color>
+                                             </DropShadow>
+                                          </input>
+                                       </InnerShadow>
+                                    </effect>
+                                 </TextField>
+                                 <Label layoutX="58.0" layoutY="32.0" text="—">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="log11211" layoutX="85.0" layoutY="25.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="50.0" promptText="Год">
+                                    <effect>
+                                       <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                          <color>
+                                             <Color red="1.0" opacity="0.0" />
+                                          </color>
+                                          <input>
+                                             <DropShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
+                                                <color>
+                                                   <Color red="1.0" opacity="0.0" />
+                                                </color>
+                                             </DropShadow>
+                                          </input>
+                                       </InnerShadow>
+                                    </effect>
+                                 </TextField>
+                              </children>
+                              <effect>
+                                 <ColorAdjust brightness="0.5" />
+                              </effect>
+                           </Pane>
+                           <Pane layoutX="15.0" layoutY="85.0" prefHeight="75.0" prefWidth="150.0">
+                              <children>
+                                 <Label text="Жанр">
+                                    <font>
+                                       <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox editable="true" layoutY="25.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="Жанр(ы)" />
+                              </children>
+                              <effect>
+                                 <ColorAdjust brightness="0.5" />
+                              </effect>
+                           </Pane>
+                        </children>
+                     </Pane>
+                     <Label layoutX="54.0" layoutY="14.0" text="Фильтрация" textFill="WHITE">
+                        <font>
+                           <Font name="Times New Roman Bold" size="24.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane layoutX="65.0" layoutY="103.0" prefHeight="465.0" prefWidth="1136.0">
+                  <children>
+                     <Pane fx:id="p_edit2211" layoutX="284.0" prefHeight="465.0" prefWidth="568.0">
+                        <children>
+                           <Pane layoutX="34.0" layoutY="66.0" prefHeight="383.0" prefWidth="500.0" styleClass="auth" stylesheets="@../css/auth.css">
+                              <children>
+                                 <ScrollPane layoutX="11.0" layoutY="12.0" prefHeight="360.0" prefWidth="480.0">
+                                    <content>
+                                       <VBox fx:id="vb_cat" spacing="10.0">
+                                          <children>
+                                             <Pane prefHeight="175.0" prefWidth="465.0" styleClass="panel" stylesheets="@../css/upanel.css">
+                                                <VBox.margin>
+                                                   <Insets />
+                                                </VBox.margin>
+                                                <children>
+                                                   <ImageView fitHeight="155.0" fitWidth="110.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@../img/books/1.png" />
+                                                      </image>
+                                                      <effect>
+                                                         <DropShadow offsetX="3.0" offsetY="3.0" />
+                                                      </effect>
+                                                   </ImageView>
+                                                   <Label layoutX="135.0" layoutY="10.0" text="Харари, Юваль Ной.">
+                                                      <font>
+                                                         <Font name="Arial Bold" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label layoutX="135.0" layoutY="35.0" text="Sapiens. Краткая история человечества">
+                                                      <font>
+                                                         <Font name="Arial Bold" size="14.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label layoutX="135.0" layoutY="55.0" text="Dvir Publishing House Ltd, 2011">
+                                                      <font>
+                                                         <Font name="Arial" size="14.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label layoutX="135.0" layoutY="71.0" prefHeight="95.0" prefWidth="325.0" text="Жанр(ы): Зарубежная образовательная литература" wrapText="true">
+                                                      <font>
+                                                         <Font name="Arial" size="14.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                                <effect>
+                                                   <DropShadow blurType="ONE_PASS_BOX">
+                                                      <color>
+                                                         <Color red="1.0" green="0.5833333134651184" opacity="0.0" />
+                                                      </color>
+                                                   </DropShadow>
+                                                </effect>
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor>
+                                             </Pane>
+                                          </children>
+                                          <padding>
+                                             <Insets left="-1.0" />
+                                          </padding>
+                                       </VBox>
+                                    </content>
+                                 </ScrollPane>
+                                 <Label layoutX="46.0" layoutY="157.0" prefWidth="410.0" text="Увы, по вашему запросу ничего не найдено:(" textAlignment="CENTER" visible="false" wrapText="true">
+                                    <font>
+                                       <Font name="System Bold" size="24.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </Pane>
+                           <Label fx:id="l_cat" layoutX="239.0" layoutY="14.0" text="Каталог" textFill="WHITE">
+                              <font>
+                                 <Font name="Times New Roman Bold" size="24.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </Pane>
                   </children>
                </Pane>
             </children>

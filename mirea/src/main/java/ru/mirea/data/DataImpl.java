@@ -3,6 +3,8 @@ package ru.mirea.data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.mirea.Controllers.ModelController;
+import ru.mirea.data.inter.*;
+import ru.mirea.data.model.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,10 +20,21 @@ public class DataImpl {
     private final NewsRep newsRep;
     private final ReaderRep readerRep;
     private final UserRep userRep;
+
+    private final KniggaRep kniggaRep;
+
+    private final OrderedKniggaRep orderedKniggaRep;
+
+    private final OrderRep orderRep;
+
+    private final PasportRep pasportRep;
+
+    private final ThemRep themRep;
+
     public static final Map<String, User> map = new HashMap<>();
 
     @Autowired
-    public DataImpl(AbonementRep abonementRep, AdminRep adminRep, Autor_po_kniggamRep autor_po_kniggamRep, Autor_userRep autor_userRep, LibrarianRep librarianRep, NewsRep newsRep, ReaderRep readerRep, UserRep userRep) {
+    public DataImpl(AbonementRep abonementRep, AdminRep adminRep, Autor_po_kniggamRep autor_po_kniggamRep, Autor_userRep autor_userRep, LibrarianRep librarianRep, NewsRep newsRep, ReaderRep readerRep, UserRep userRep, KniggaRep kniggaRep, OrderedKniggaRep orderedKniggaRep, OrderRep orderRep, PasportRep pasportRep, ThemRep themRep) {
         this.abonementRep = abonementRep;
         this.adminRep = adminRep;
         this.autor_po_kniggamRep = autor_po_kniggamRep;
@@ -30,6 +43,11 @@ public class DataImpl {
         this.newsRep = newsRep;
         this.readerRep = readerRep;
         this.userRep = userRep;
+        this.kniggaRep = kniggaRep;
+        this.orderedKniggaRep = orderedKniggaRep;
+        this.orderRep = orderRep;
+        this.pasportRep = pasportRep;
+        this.themRep = themRep;
     }
 
     public void addorsave(User user) {
@@ -41,6 +59,23 @@ public class DataImpl {
 
     public List<User> getAllUsers() {
         return ModelController.inet ? userRep.findAll() : map.values().stream().toList();
+    }
+
+    public List<Knigga> getAllKniggas() {
+        return kniggaRep.findAll();
+    }
+
+    public List<Knigga> getAllKniggasById_id(int id_id) {
+        return kniggaRep.findByIdid(id_id);
+    }
+
+    public Them getThemeById(int id)
+    {
+        return themRep.getById(id);
+    }
+
+    public Autor_po_kniggam getAutor_po_kniggamById(int id) {
+        return autor_po_kniggamRep.getById(id);
     }
 
     public List<News> getAllNews() {

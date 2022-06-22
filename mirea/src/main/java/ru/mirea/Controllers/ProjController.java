@@ -3,6 +3,7 @@ package ru.mirea.Controllers;
 import javafx.animation.KeyValue;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -18,15 +19,21 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import ru.mirea.MireaApplication;
 import ru.mirea.Start;
-import ru.mirea.data.User;
+import ru.mirea.data.model.Autor_po_kniggam;
+import ru.mirea.data.model.Knigga;
+import ru.mirea.data.model.User;
 import ru.mirea.data.DataImpl;
 
-import java.awt.*;
-import java.io.IOException;
+import java.awt.Toolkit;
+import java.awt.Desktop;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -37,7 +44,7 @@ public class ProjController extends ModelController{
 
     private int id = 1;
 
-    public DataImpl dataImpl;// = (DataImpl) MireaApplication.ctx.getBean("usersImpl");
+    public DataImpl dataImpl;
 
     @FXML
     private Label usern;
@@ -92,6 +99,12 @@ public class ProjController extends ModelController{
     @FXML
     private WebView webmap;
 
+    @FXML
+    private Label l_cat;
+
+    @FXML
+    private VBox vb_cat;
+
     private boolean caps_lock = false;
 
     private Pane act_pane;
@@ -104,7 +117,9 @@ public class ProjController extends ModelController{
 
     public void init()
     {
-        //user = dataImpl.getuser(Start.usename);
+        dataImpl = (DataImpl) MireaApplication.ctx.getBean("dataImpl");
+        //user = dataImpl.getuser("Zuani");
+        //System.out.println("Pr: " + user.getPassword());
         if(user != null)
         {
             usern.setText(Start.usename);
@@ -126,6 +141,58 @@ public class ProjController extends ModelController{
         //super.init();
         WebEngine webEngine = webmap.getEngine();
         webEngine.load("https://yandex.ru/map-widget/v1/?um=constructor%3Abbe1c6998b6c380aa3d4725123f54d465d8f43861aa738b01acfa6bae8219955&amp;source=constructor");
+        ini_cat();
+    }
+
+    private void ini_cat()
+    {
+        vb_cat.getChildren().clear();
+        for(Knigga knigga : dataImpl.getAllKniggas())
+        {
+            Autor_po_kniggam autor = dataImpl.getAutor_po_kniggamById(knigga.getId_author());
+            String author = autor.getLast_name() + ", " + autor.getName() + " " + autor.getPatronymic() + ".";
+            StringBuilder zhanr = new StringBuilder(dataImpl.getThemeById(knigga.getKod_tem()).getNazv());
+            for(Knigga kn : dataImpl.getAllKniggasById_id(knigga.getId()))
+            {
+                zhanr.append(",").append(dataImpl.getThemeById(kn.getKod_tem()).getNazv());
+            }
+            vb_cat.getChildren().add(getNewKnigga(author, knigga.getNazv(), knigga.getIzd(), zhanr.toString(), knigga.getPrev()));
+        }
+    }
+
+    private Pane getNewKnigga(String author, String name, String izd, String zhanr, String url)
+    {
+        Pane pane = new Pane();
+        pane.setPrefSize(465,175);
+        pane.setCursor(Cursor.HAND);
+        pane.getStylesheets().add("/css/upanel.css");
+        pane.getStyleClass().add("panel");
+        pane.setEffect(new DropShadow(10, Color.web("#ff9500",0)));
+        ImageView imageView = new ImageView(url);
+        imageView.relocate(15,10);
+        imageView.setFitWidth(110);
+        imageView.setFitHeight(155);
+        imageView.setEffect(new DropShadow(10, 3, 3, Color.web("#000000",1)));
+        Label label = new Label(author);
+        label.setFont(Font.font("Arial", FontWeight.BOLD, 18));
+        label.relocate(135, 10);
+        Label label1 = new Label(name);
+        label1.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+        label1.relocate(135, 35);
+        Label label2 = new Label(izd);
+        label2.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
+        label2.relocate(135, 55);
+        Label label3 = new Label("Жанр(ы): " + zhanr);
+        label3.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
+        label3.setWrapText(true);
+        label3.relocate(135, 71);
+        label3.setPrefSize(325,95);
+        pane.getChildren().add(imageView);
+        pane.getChildren().add(label);
+        pane.getChildren().add(label1);
+        pane.getChildren().add(label2);
+        pane.getChildren().add(label3);
+        return pane;
     }
 
     public void browse_3535() throws URISyntaxException, IOException {
