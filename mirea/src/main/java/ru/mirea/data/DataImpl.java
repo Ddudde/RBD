@@ -2,10 +2,13 @@ package ru.mirea.data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.mirea.Controllers.ModelController;
 import ru.mirea.data.inter.*;
 import ru.mirea.data.model.*;
 
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,12 +16,19 @@ import java.util.Map;
 @Service
 public class DataImpl {
     private final AbonementRep abonementRep;
+
     private final AdminRep adminRep;
+
     private final Autor_po_kniggamRep autor_po_kniggamRep;
+
     private final Autor_userRep autor_userRep;
+
     private final LibrarianRep librarianRep;
+
     private final NewsRep newsRep;
+
     private final ReaderRep readerRep;
+
     private final UserRep userRep;
 
     private final KniggaRep kniggaRep;
@@ -65,24 +75,28 @@ public class DataImpl {
         return kniggaRep.findAll();
     }
 
-    public List<Knigga> getAllKniggasById_id(int id_id) {
+    public List<Knigga> getAllKniggasById_id(Integer id_id) {
         return kniggaRep.findByIdid(id_id);
     }
 
-    public Them getThemeById(int id)
+    public Them getThemeById(Integer id)
     {
-        return themRep.getById(id);
+        if(themRep.findById(id).isPresent())
+            return themRep.findById(id).get();
+        return null;
     }
 
-    public Autor_po_kniggam getAutor_po_kniggamById(int id) {
-        return autor_po_kniggamRep.getById(id);
+    public Autor_po_kniggam getAutor_po_kniggamById(Integer id) {
+        if(autor_po_kniggamRep.findById(id).isPresent())
+            return autor_po_kniggamRep.findById(id).get();
+        return null;
     }
 
     public List<News> getAllNews() {
         return newsRep.findAll();
     }
 
-    public void delete(int id) {
+    public void delete(Integer id) {
         if(ModelController.inet)
             userRep.delete(userRep.getById(id));
     }

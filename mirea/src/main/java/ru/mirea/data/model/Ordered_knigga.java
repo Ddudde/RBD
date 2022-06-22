@@ -23,11 +23,11 @@ public class Ordered_knigga {
     private Date fakt_data_vozvr;
 
     @Column(name = "Код_пользователя")
-    private int id_user;
+    private Integer id_user;
 
     @Id
     @Column(name = "Код_книги")
-    private int id_knigga;
+    private Integer id_knigga;
 
     @Override
     public String toString() {

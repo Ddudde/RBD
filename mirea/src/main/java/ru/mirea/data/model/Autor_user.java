@@ -16,10 +16,10 @@ public class Autor_user {
     @Id
     @Column(name = "Код_пользователя")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Код_автора")
-    private int id_autor;
+    private Integer id_autor;
 
     @Column(name = "Почтовый_адрес")
     private String email;

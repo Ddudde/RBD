@@ -15,7 +15,7 @@ public class Them {
     @Id
     @Column(name = "Код_тематики")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Название")
     private String nazv;

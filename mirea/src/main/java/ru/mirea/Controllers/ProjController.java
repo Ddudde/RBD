@@ -24,6 +24,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import org.springframework.transaction.annotation.Transactional;
 import ru.mirea.MireaApplication;
 import ru.mirea.Start;
 import ru.mirea.data.model.Autor_po_kniggam;
@@ -149,12 +150,13 @@ public class ProjController extends ModelController{
         vb_cat.getChildren().clear();
         for(Knigga knigga : dataImpl.getAllKniggas())
         {
+            if(knigga.getNazv() == null) continue;
             Autor_po_kniggam autor = dataImpl.getAutor_po_kniggamById(knigga.getId_author());
             String author = autor.getLast_name() + ", " + autor.getName() + " " + autor.getPatronymic() + ".";
-            StringBuilder zhanr = new StringBuilder(dataImpl.getThemeById(knigga.getKod_tem()).getNazv());
+            StringBuilder zhanr = new StringBuilder(dataImpl.getThemeById(knigga.getId_tem()).getNazv());
             for(Knigga kn : dataImpl.getAllKniggasById_id(knigga.getId()))
             {
-                zhanr.append(",").append(dataImpl.getThemeById(kn.getKod_tem()).getNazv());
+                zhanr.append(", ").append(dataImpl.getThemeById(kn.getId_tem()).getNazv());
             }
             vb_cat.getChildren().add(getNewKnigga(author, knigga.getNazv(), knigga.getIzd(), zhanr.toString(), knigga.getPrev()));
         }

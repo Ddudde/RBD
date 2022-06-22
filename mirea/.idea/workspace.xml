@@ -23,56 +23,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91a3c2d-f74b-4e21-b132-9ba96a973ee7" name="Default Changelist" comment="Begin">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_fxd_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/KniggaRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/OrderRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/OrderedKniggaRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/PasportRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/ThemRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Knigga.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Ordered_knigga.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Pasport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Them.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/project — копия.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/mirea/Controllers/ProjController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/mirea/Controllers/ProjController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/mirea/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/mirea/Start.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/fxml/project.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/fxml/project.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/img/books/1 — копия.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/ModelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/ProjController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/ProjController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/Controllers/StartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Abonement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Abonement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/AbonementRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/AbonementRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/AdminRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/AdminRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Autor_po_kniggam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_po_kniggam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Autor_po_kniggamRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/Autor_po_kniggamRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Autor_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Autor_userRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/Autor_userRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/MireaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/MireaApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/DataImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/DataImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/LibrarianRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/LibrarianRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/NewsRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/NewsRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/ReaderRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/ReaderRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/UserRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/UserRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/KniggaRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/inter/KniggaRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Abonement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Abonement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_po_kniggam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_po_kniggam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Autor_user.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Knigga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Knigga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Ordered_knigga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Ordered_knigga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Pasport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Pasport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Them.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/Them.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mirea/data/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/project.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/project.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/books/1 — копия.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Приложение/.gradle/7.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Приложение/.gradle/7.2/dependencies-accessors/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Приложение/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" />

@@ -16,19 +16,19 @@ public class Order {
     @Id
     @Column(name = "Код_заказа")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Дата_заказа")
     private Date date_order;
 
     @Column(name = "Код_абонемента")
-    private int id_abon;
+    private Integer id_abon;
 
     @Column(name = "Код_книги")
-    private int id_kniggi;
+    private Integer id_kniggi;
 
     @Column(name = "ID")
-    private int id_id;
+    private Integer id_id;
 
     @Override
     public String toString() {

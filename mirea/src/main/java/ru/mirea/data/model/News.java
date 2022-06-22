@@ -15,7 +15,7 @@ public class News {
     @Id
     @Column(name = "Код_новости")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Ссылка_на_превью")
     private String url_prev;
@@ -24,7 +24,7 @@ public class News {
     private String url_news;
 
     @Column(name = "Администратор")
-    private int id_admin;
+    private Integer id_admin;
 
     @Override
     public String toString() {

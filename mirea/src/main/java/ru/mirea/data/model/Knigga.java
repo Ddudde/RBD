@@ -15,7 +15,7 @@ public class Knigga {
     @Id
     @Column(name = "Код_книги")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Название")
     private String nazv;
@@ -24,22 +24,22 @@ public class Knigga {
     private String izd;
 
     @Column(name = "Год_издания")
-    private int god_izd;
+    private Integer god_izd;
 
     @Column(name = "Код_тематики")
-    private int kod_tem;
+    private Integer id_tem;
 
     @Column(name = "Администратор")
-    private int id_admin;
+    private Integer id_admin;
 
     @Column(name = "Автор")
-    private int id_author_po_kniggam;
+    private Integer id_author_po_kniggam;
 
     @Column(name = "Код_автора")
-    private int id_author;
+    private Integer id_author;
 
     @Column(name = "ID")
-    private int idid;
+    private Integer idid;
 
     @Column(name = "Превью")
     private String prev;
@@ -51,7 +51,7 @@ public class Knigga {
                 ", nazv='" + nazv + '\'' +
                 ", izd='" + izd + '\'' +
                 ", god_izd=" + god_izd +
-                ", kod_tem=" + kod_tem +
+                ", id_tem=" + id_tem +
                 ", id_admin=" + id_admin +
                 ", id_author_po_kniggam=" + id_author_po_kniggam +
                 ", id_author=" + id_author +

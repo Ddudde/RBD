@@ -15,7 +15,7 @@ public class User {
     @Id
     @Column(name = "Код_пользователя")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Имя_пользователя")
     private String username;
@@ -24,10 +24,10 @@ public class User {
     private String password;
 
     @Column(name = "Номер_иконки")
-    private int icons;
+    private Integer icons;
 
     @Column(name = "Код_паспорта")
-    private int id_passport;
+    private Integer id_passport;
 
     @Column(name = "Телефон")
     private String tel;

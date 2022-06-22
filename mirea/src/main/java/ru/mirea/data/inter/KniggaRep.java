@@ -6,5 +6,5 @@ import ru.mirea.data.model.Knigga;
 import java.util.List;
 
 public interface KniggaRep extends JpaRepository<Knigga, Integer> {
-    List<Knigga> findByIdid(int idid);
+    List<Knigga> findByIdid(Integer idid);
 }

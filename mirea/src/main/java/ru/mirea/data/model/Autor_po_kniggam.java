@@ -16,7 +16,7 @@ public class Autor_po_kniggam {
     @Id
     @Column(name = "Код_автора")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Фамилия")
     private String last_name;

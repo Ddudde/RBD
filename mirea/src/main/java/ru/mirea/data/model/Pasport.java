@@ -16,7 +16,7 @@ public class Pasport {
     @Id
     @Column(name = "Koд_паспорта")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Фамилия")
     private String familya;
@@ -28,10 +28,10 @@ public class Pasport {
     private String otchestvo;
 
     @Column(name = "Серия")
-    private int seriya;
+    private Integer seriya;
 
     @Column(name = "Номер")
-    private int nomer;
+    private Integer nomer;
 
     @Column(name = "Дата_рождения")
     private Date date_of_birthday;

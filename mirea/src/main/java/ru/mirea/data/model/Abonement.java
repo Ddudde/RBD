@@ -16,19 +16,19 @@ public class Abonement {
     @Id
     @Column(name = "Код_абонемента")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Читателя")
-    private int id_reader;
+    private Integer id_reader;
 
     @Column(name = "Библиотекаря")
-    private int id_librarian;
+    private Integer id_librarian;
 
     @Column(name = "Выговоры")
-    private int reprimands;
+    private Integer reprimands;
 
     @Column(name = "ID")
-    private int id_id;
+    private Integer id_id;
 
     @Override
     public String toString() {

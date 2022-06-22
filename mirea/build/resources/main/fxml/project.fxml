@@ -2418,7 +2418,7 @@
             <children>
                <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1280.0" styleClass="auth" stylesheets="@../css/auth.css">
                   <children>
-                     <TextField fx:id="log112" layoutX="483.0" layoutY="8.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="300.0" promptText="Введите название книги...">
+                     <TextField fx:id="log112" focusTraversable="false" layoutX="483.0" layoutY="8.0" onKeyReleased="#textch" prefHeight="35.0" prefWidth="300.0" promptText="Введите название книги...">
                         <effect>
                            <InnerShadow blurType="GAUSSIAN" height="30.0" radius="14.5" width="30.0">
                               <color>

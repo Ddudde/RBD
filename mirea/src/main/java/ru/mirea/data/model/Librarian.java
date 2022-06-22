@@ -16,7 +16,7 @@ public class Librarian {
     @Id
     @Column(name = "Код_пользователя")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "Дата_регистрации")
     private Date date;
