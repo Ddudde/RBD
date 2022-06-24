@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version "1.0.11.RELEASE"
+	id 'war'
+	id 'java'
+}
+
+group = 'ru.app'
+version = '1.0'
+sourceCompatibility = 17
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'lib', include: ['*.jar'])
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.openjfx:javafx-base:17.0.0.1:win'
+	implementation 'org.openjfx:javafx-controls:17.0.0.1:win'
+	implementation 'org.openjfx:javafx-graphics:17.0.0.1:win'
+	implementation 'org.openjfx:javafx-fxml:17.0.0.1:win'
+	implementation 'org.openjfx:javafx-media:17.0.0.1:win'
+	implementation 'org.openjfx:javafx-web:17.0.0.1:win'
+	runtimeOnly 'mysql:mysql-connector-java'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+task build_exe(type: Exec) {
+	workingDir 'D:\\Desk\\Rep\\RBD\\app'
+	commandLine "launch4jc.exe", "exec.xml"
+}
+
+bootWar {
+	baseName = "RSL"
+	mainClassName = "ru.app.Application"
+}
+
+task runnn_exe {
+	dependsOn(bootWar)
+	dependsOn(build_exe)
+}

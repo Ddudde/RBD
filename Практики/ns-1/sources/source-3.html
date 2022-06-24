@@ -1,0 +1,674 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > StartController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">ru.mirea.Controllers</a>
+</div>
+
+<h1>Coverage Summary for Class: StartController (ru.mirea.Controllers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StartController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/41)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/275)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package ru.mirea.Controllers;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import javafx.animation.*;
+<i class="no-highlight">4</i>&nbsp;import javafx.application.Platform;
+<i class="no-highlight">5</i>&nbsp;import javafx.beans.value.ObservableValue;
+<i class="no-highlight">6</i>&nbsp;import javafx.event.ActionEvent;
+<i class="no-highlight">7</i>&nbsp;import javafx.fxml.FXML;
+<i class="no-highlight">8</i>&nbsp;import javafx.scene.Cursor;
+<i class="no-highlight">9</i>&nbsp;import javafx.scene.Node;
+<i class="no-highlight">10</i>&nbsp;import javafx.scene.control.PasswordField;
+<i class="no-highlight">11</i>&nbsp;import javafx.scene.control.ScrollPane;
+<i class="no-highlight">12</i>&nbsp;import javafx.scene.control.TextField;
+<i class="no-highlight">13</i>&nbsp;import javafx.scene.effect.DropShadow;
+<i class="no-highlight">14</i>&nbsp;import javafx.scene.effect.Glow;
+<i class="no-highlight">15</i>&nbsp;import javafx.scene.effect.InnerShadow;
+<i class="no-highlight">16</i>&nbsp;import javafx.scene.image.ImageView;
+<i class="no-highlight">17</i>&nbsp;import javafx.scene.input.KeyCode;
+<i class="no-highlight">18</i>&nbsp;import javafx.scene.input.KeyEvent;
+<i class="no-highlight">19</i>&nbsp;import javafx.scene.image.Image;
+<i class="no-highlight">20</i>&nbsp;import javafx.scene.input.MouseEvent;
+<i class="no-highlight">21</i>&nbsp;import javafx.scene.layout.HBox;
+<i class="no-highlight">22</i>&nbsp;import javafx.scene.layout.Pane;
+<i class="no-highlight">23</i>&nbsp;import javafx.scene.layout.StackPane;
+<i class="no-highlight">24</i>&nbsp;import javafx.scene.paint.Color;
+<i class="no-highlight">25</i>&nbsp;import javafx.scene.transform.Rotate;
+<i class="no-highlight">26</i>&nbsp;import javafx.util.Duration;
+<i class="no-highlight">27</i>&nbsp;import ru.mirea.MireaApplication;
+<i class="no-highlight">28</i>&nbsp;import ru.mirea.Start;
+<i class="no-highlight">29</i>&nbsp;import ru.mirea.data.model.News;
+<i class="no-highlight">30</i>&nbsp;import ru.mirea.data.model.User;
+<i class="no-highlight">31</i>&nbsp;import ru.mirea.data.DataImpl;
+<i class="no-highlight">32</i>&nbsp;
+<i class="no-highlight">33</i>&nbsp;import java.awt.*;
+<i class="no-highlight">34</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">35</i>&nbsp;import java.net.URI;
+<i class="no-highlight">36</i>&nbsp;import java.net.URISyntaxException;
+<i class="no-highlight">37</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">38</i>&nbsp;import java.util.List;
+<i class="no-highlight">39</i>&nbsp;import java.util.Objects;
+<i class="no-highlight">40</i>&nbsp;
+<b class="nc"><i class="no-highlight">41</i>&nbsp;public class StartController extends ModelController{</b>
+<i class="no-highlight">42</i>&nbsp;
+<i class="no-highlight">43</i>&nbsp;    @FXML
+<i class="no-highlight">44</i>&nbsp;    public ScrollPane scrpan;
+<i class="no-highlight">45</i>&nbsp;
+<i class="no-highlight">46</i>&nbsp;    @FXML
+<i class="no-highlight">47</i>&nbsp;    private Pane up;
+<i class="no-highlight">48</i>&nbsp;
+<i class="no-highlight">49</i>&nbsp;    @FXML
+<i class="no-highlight">50</i>&nbsp;    private Pane nevlog;
+<i class="no-highlight">51</i>&nbsp;
+<i class="no-highlight">52</i>&nbsp;    @FXML
+<i class="no-highlight">53</i>&nbsp;    private Pane auth;
+<i class="no-highlight">54</i>&nbsp;
+<i class="no-highlight">55</i>&nbsp;    @FXML
+<i class="no-highlight">56</i>&nbsp;    private Pane reg;
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;    @FXML
+<i class="no-highlight">59</i>&nbsp;    private Pane zagr;
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;    @FXML
+<i class="no-highlight">62</i>&nbsp;    private Pane logzan;
+<i class="no-highlight">63</i>&nbsp;
+<i class="no-highlight">64</i>&nbsp;    @FXML
+<i class="no-highlight">65</i>&nbsp;    private Pane povpar;
+<i class="no-highlight">66</i>&nbsp;
+<i class="no-highlight">67</i>&nbsp;    @FXML
+<i class="no-highlight">68</i>&nbsp;    private Pane news;
+<i class="no-highlight">69</i>&nbsp;
+<i class="no-highlight">70</i>&nbsp;    @FXML
+<i class="no-highlight">71</i>&nbsp;    private StackPane prilozh;
+<i class="no-highlight">72</i>&nbsp;
+<i class="no-highlight">73</i>&nbsp;    @FXML
+<i class="no-highlight">74</i>&nbsp;    private TextField a_log;
+<i class="no-highlight">75</i>&nbsp;
+<i class="no-highlight">76</i>&nbsp;    @FXML
+<i class="no-highlight">77</i>&nbsp;    private ImageView left_mov;
+<i class="no-highlight">78</i>&nbsp;
+<i class="no-highlight">79</i>&nbsp;    @FXML
+<i class="no-highlight">80</i>&nbsp;    private ImageView right_mov;
+<i class="no-highlight">81</i>&nbsp;
+<i class="no-highlight">82</i>&nbsp;    @FXML
+<i class="no-highlight">83</i>&nbsp;    private PasswordField a_par;
+<i class="no-highlight">84</i>&nbsp;
+<i class="no-highlight">85</i>&nbsp;    @FXML
+<i class="no-highlight">86</i>&nbsp;    private TextField r_log;
+<i class="no-highlight">87</i>&nbsp;
+<i class="no-highlight">88</i>&nbsp;    @FXML
+<i class="no-highlight">89</i>&nbsp;    private PasswordField r_par;
+<i class="no-highlight">90</i>&nbsp;
+<i class="no-highlight">91</i>&nbsp;    @FXML
+<i class="no-highlight">92</i>&nbsp;    private PasswordField r_conf_par;
+<i class="no-highlight">93</i>&nbsp;
+<i class="no-highlight">94</i>&nbsp;    @FXML
+<i class="no-highlight">95</i>&nbsp;    private Pane l_caps;
+<i class="no-highlight">96</i>&nbsp;
+<i class="no-highlight">97</i>&nbsp;    @FXML
+<i class="no-highlight">98</i>&nbsp;    private Pane r_caps;
+<i class="no-highlight">99</i>&nbsp;
+<i class="no-highlight">100</i>&nbsp;    @FXML
+<i class="no-highlight">101</i>&nbsp;    private Pane logos;
+<i class="no-highlight">102</i>&nbsp;
+<b class="nc"><i class="no-highlight">103</i>&nbsp;    private int id = 0;</b>
+<i class="no-highlight">104</i>&nbsp;
+<i class="no-highlight">105</i>&nbsp;    private ImageView act_pane;
+<i class="no-highlight">106</i>&nbsp;
+<i class="no-highlight">107</i>&nbsp;    private Pane hbox;
+<i class="no-highlight">108</i>&nbsp;
+<b class="nc"><i class="no-highlight">109</i>&nbsp;    private int node = 0;</b>
+<i class="no-highlight">110</i>&nbsp;
+<b class="nc"><i class="no-highlight">111</i>&nbsp;    private boolean caps_lock = false;</b>
+<i class="no-highlight">112</i>&nbsp;
+<b class="nc"><i class="no-highlight">113</i>&nbsp;    private boolean login = true;</b>
+<i class="no-highlight">114</i>&nbsp;
+<i class="no-highlight">115</i>&nbsp;    private RotateTransition rt_a;
+<i class="no-highlight">116</i>&nbsp;
+<i class="no-highlight">117</i>&nbsp;    private RotateTransition rt_r;
+<i class="no-highlight">118</i>&nbsp;
+<i class="no-highlight">119</i>&nbsp;    public DataImpl dataImpl;
+<i class="no-highlight">120</i>&nbsp;
+<i class="no-highlight">121</i>&nbsp;    private User reg_us;
+<i class="no-highlight">122</i>&nbsp;
+<i class="no-highlight">123</i>&nbsp;    private Timeline timeline;
+<i class="no-highlight">124</i>&nbsp;
+<b class="nc"><i class="no-highlight">125</i>&nbsp;    private List&lt;ImageView&gt; imageViews = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">126</i>&nbsp;
+<b class="nc"><i class="no-highlight">127</i>&nbsp;    private List&lt;Pane&gt; bhox = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">128</i>&nbsp;
+<i class="no-highlight">129</i>&nbsp;    public void onLogos()
+<i class="no-highlight">130</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">131</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">132</i>&nbsp;        if(node &lt;= logos.getChildren().size() - 1)</b>
+<i class="no-highlight">133</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">134</i>&nbsp;            Node nod = logos.getChildren().get(node);</b>
+<b class="nc"><i class="no-highlight">135</i>&nbsp;            nod.setTranslateX(-175);</b>
+<b class="nc"><i class="no-highlight">136</i>&nbsp;            Glow glow = (Glow) nod.getEffect();</b>
+<b class="nc"><i class="no-highlight">137</i>&nbsp;            kv.add(new KeyValue(nod.opacityProperty(), 1.0, inter));</b>
+<b class="nc"><i class="no-highlight">138</i>&nbsp;            kv.add(new KeyValue(glow.levelProperty(), 1.0, inter));</b>
+<b class="nc"><i class="no-highlight">139</i>&nbsp;            kv.add(new KeyValue(nod.translateXProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">140</i>&nbsp;            kv.add(new KeyValue(nod.mouseTransparentProperty(), true, inter));</b>
+<b class="nc"><i class="no-highlight">141</i>&nbsp;            nod.mouseTransparentProperty().addListener(this::finished);</b>
+<b class="nc"><i class="no-highlight">142</i>&nbsp;            played(kv, 1000);</b>
+<i class="no-highlight">143</i>&nbsp;        }
+<i class="no-highlight">144</i>&nbsp;    }
+<i class="no-highlight">145</i>&nbsp;
+<i class="no-highlight">146</i>&nbsp;    private void finished(ObservableValue&lt;? extends Boolean&gt; ov, Boolean old_val, Boolean new_val) {
+<b class="nc"><i class="no-highlight">147</i>&nbsp;        if(new_val)</b>
+<i class="no-highlight">148</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">149</i>&nbsp;            Node nod = logos.getChildren().get(node);</b>
+<b class="nc"><i class="no-highlight">150</i>&nbsp;            List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">151</i>&nbsp;            Glow glow = (Glow) nod.getEffect();</b>
+<b class="nc"><i class="no-highlight">152</i>&nbsp;            kv.add(new KeyValue(glow.levelProperty(), 0.0, inter));</b>
+<b class="nc"><i class="no-highlight">153</i>&nbsp;            played(kv, 1000);</b>
+<b class="nc"><i class="no-highlight">154</i>&nbsp;            nod.mouseTransparentProperty().removeListener(this::finished);</b>
+<b class="nc"><i class="no-highlight">155</i>&nbsp;            nod.setMouseTransparent(false);</b>
+<b class="nc"><i class="no-highlight">156</i>&nbsp;            node++;</b>
+<b class="nc"><i class="no-highlight">157</i>&nbsp;            onLogos();</b>
+<i class="no-highlight">158</i>&nbsp;        }
+<i class="no-highlight">159</i>&nbsp;    }
+<i class="no-highlight">160</i>&nbsp;
+<i class="no-highlight">161</i>&nbsp;    public void init() {
+<b class="nc"><i class="no-highlight">162</i>&nbsp;        up();</b>
+<b class="nc"><i class="no-highlight">163</i>&nbsp;        zagr.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">164</i>&nbsp;        prilozh.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">165</i>&nbsp;        dataImpl = (DataImpl) MireaApplication.ctx.getBean(&quot;dataImpl&quot;);</b>
+<b class="nc"><i class="no-highlight">166</i>&nbsp;        caps_lock = Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK);</b>
+<b class="nc"><i class="no-highlight">167</i>&nbsp;        set_caps();</b>
+<b class="nc"><i class="no-highlight">168</i>&nbsp;        rt_a = new RotateTransition(Duration.millis(1000), auth);</b>
+<b class="nc"><i class="no-highlight">169</i>&nbsp;        rt_r = new RotateTransition(Duration.millis(1000), reg);</b>
+<b class="nc"><i class="no-highlight">170</i>&nbsp;        rt_a.setAxis(Rotate.X_AXIS);</b>
+<b class="nc"><i class="no-highlight">171</i>&nbsp;        rt_r.setAxis(Rotate.X_AXIS);</b>
+<b class="nc"><i class="no-highlight">172</i>&nbsp;        act_pane = (ImageView) Start.roots.get(&quot;id_&quot; + id);</b>
+<b class="nc"><i class="no-highlight">173</i>&nbsp;        auth.getScene().addEventHandler(KeyEvent.KEY_RELEASED, this::caps);</b>
+<b class="nc"><i class="no-highlight">174</i>&nbsp;        scrpan.vvalueProperty().addListener(this::changed);</b>
+<b class="nc"><i class="no-highlight">175</i>&nbsp;        super.init();</b>
+<b class="nc"><i class="no-highlight">176</i>&nbsp;        timeline = new Timeline(new KeyFrame(Duration.seconds(10), this::next));</b>
+<b class="nc"><i class="no-highlight">177</i>&nbsp;        timeline.setCycleCount(Animation.INDEFINITE);</b>
+<b class="nc"><i class="no-highlight">178</i>&nbsp;        timeline.play();</b>
+<b class="nc"><i class="no-highlight">179</i>&nbsp;        System.out.println(dataImpl.getAllUsers());</b>
+<b class="nc"><i class="no-highlight">180</i>&nbsp;        set_news(dataImpl.getAllNews());</b>
+<b class="nc"><i class="no-highlight">181</i>&nbsp;        act_pane = imageViews.get(id);</b>
+<b class="nc"><i class="no-highlight">182</i>&nbsp;        act_pane.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">183</i>&nbsp;        hbox = bhox.get(id);</b>
+<b class="nc"><i class="no-highlight">184</i>&nbsp;        hbox.setStyle(&quot;-fx-background-color:  #cd4e45&quot;);</b>
+<i class="no-highlight">185</i>&nbsp;    }
+<i class="no-highlight">186</i>&nbsp;
+<i class="no-highlight">187</i>&nbsp;    private void set_news(List&lt;News&gt; newes)
+<i class="no-highlight">188</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">189</i>&nbsp;        Pane pane = (Pane) news.getChildren().get(0);</b>
+<b class="nc"><i class="no-highlight">190</i>&nbsp;        HBox hBox = (HBox) news.getChildren().get(1);</b>
+<b class="nc"><i class="no-highlight">191</i>&nbsp;        for(News ne : newes)</b>
+<i class="no-highlight">192</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">193</i>&nbsp;            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream(ne.getUrl_prev())));</b>
+<b class="nc"><i class="no-highlight">194</i>&nbsp;            imageView.setId(&quot;id_&quot; + ne.getId());</b>
+<b class="nc"><i class="no-highlight">195</i>&nbsp;            imageView.setOnMouseClicked(mouseEvent -&gt; {</b>
+<b class="nc"><i class="no-highlight">196</i>&nbsp;                Desktop d = Desktop.getDesktop();</b>
+<i class="no-highlight">197</i>&nbsp;                try {
+<b class="nc"><i class="no-highlight">198</i>&nbsp;                    d.browse(new URI(ne.getUrl_news()));</b>
+<b class="nc"><i class="no-highlight">199</i>&nbsp;                } catch (IOException | URISyntaxException e) {</b>
+<b class="nc"><i class="no-highlight">200</i>&nbsp;                    e.printStackTrace();</b>
+<b class="nc"><i class="no-highlight">201</i>&nbsp;                }</b>
+<i class="no-highlight">202</i>&nbsp;            });
+<b class="nc"><i class="no-highlight">203</i>&nbsp;            imageView.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">204</i>&nbsp;            imageView.setCursor(Cursor.HAND);</b>
+<b class="nc"><i class="no-highlight">205</i>&nbsp;            pane.getChildren().add(imageView);</b>
+<b class="nc"><i class="no-highlight">206</i>&nbsp;            imageViews.add(imageView);</b>
+<b class="nc"><i class="no-highlight">207</i>&nbsp;            Pane pan = new Pane();</b>
+<b class="nc"><i class="no-highlight">208</i>&nbsp;            pan.setPrefSize(7,7);</b>
+<b class="nc"><i class="no-highlight">209</i>&nbsp;            pan.setStyle(&quot;-fx-background-color: #d8d8d8&quot;);</b>
+<b class="nc"><i class="no-highlight">210</i>&nbsp;            pan.setId(&quot;pid_&quot; + ne.getId());</b>
+<b class="nc"><i class="no-highlight">211</i>&nbsp;            pan.setCursor(Cursor.HAND);</b>
+<b class="nc"><i class="no-highlight">212</i>&nbsp;            int dsf = imageViews.size()-2;</b>
+<b class="nc"><i class="no-highlight">213</i>&nbsp;            pan.setOnMouseClicked(mouseEvent -&gt; {</b>
+<b class="nc"><i class="no-highlight">214</i>&nbsp;                id = dsf;</b>
+<b class="nc"><i class="no-highlight">215</i>&nbsp;                System.out.println(id);</b>
+<b class="nc"><i class="no-highlight">216</i>&nbsp;                next_list();</b>
+<i class="no-highlight">217</i>&nbsp;            });
+<b class="nc"><i class="no-highlight">218</i>&nbsp;            bhox.add(pan);</b>
+<b class="nc"><i class="no-highlight">219</i>&nbsp;            hBox.getChildren().add(pan);</b>
+<b class="nc"><i class="no-highlight">220</i>&nbsp;        }</b>
+<i class="no-highlight">221</i>&nbsp;    }
+<i class="no-highlight">222</i>&nbsp;
+<i class="no-highlight">223</i>&nbsp;    private void next(ActionEvent actionEvent)
+<i class="no-highlight">224</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">225</i>&nbsp;        next_list();</b>
+<i class="no-highlight">226</i>&nbsp;    }
+<i class="no-highlight">227</i>&nbsp;
+<i class="no-highlight">228</i>&nbsp;    private void changed(ObservableValue&lt;? extends Number&gt; ov, Number old_val, Number new_val) {
+<b class="nc"><i class="no-highlight">229</i>&nbsp;        if(new_val.floatValue() &gt;= 0.75 &amp;&amp; !up.isVisible()) {</b>
+<b class="nc"><i class="no-highlight">230</i>&nbsp;            up.setVisible(true);</b>
+<i class="no-highlight">231</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">232</i>&nbsp;        if(new_val.floatValue() &lt; 0.75 &amp;&amp; up.isVisible()) {</b>
+<b class="nc"><i class="no-highlight">233</i>&nbsp;            up.setVisible(false);</b>
+<i class="no-highlight">234</i>&nbsp;        }
+<i class="no-highlight">235</i>&nbsp;    }
+<i class="no-highlight">236</i>&nbsp;
+<i class="no-highlight">237</i>&nbsp;    public void onEnterR(KeyEvent keyEvent)
+<i class="no-highlight">238</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">239</i>&nbsp;        if(keyEvent.getCode() == KeyCode.ENTER) onreg();</b>
+<i class="no-highlight">240</i>&nbsp;    }
+<i class="no-highlight">241</i>&nbsp;
+<i class="no-highlight">242</i>&nbsp;    public void onEnterA(KeyEvent keyEvent) throws IOException {
+<b class="nc"><i class="no-highlight">243</i>&nbsp;        if(keyEvent.getCode() == KeyCode.ENTER) onauth();</b>
+<i class="no-highlight">244</i>&nbsp;    }
+<i class="no-highlight">245</i>&nbsp;
+<i class="no-highlight">246</i>&nbsp;    public void toreg(User user)
+<i class="no-highlight">247</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">248</i>&nbsp;        destr_auth();</b>
+<b class="nc"><i class="no-highlight">249</i>&nbsp;        login = false;</b>
+<b class="nc"><i class="no-highlight">250</i>&nbsp;        reg.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">251</i>&nbsp;        rotate_this(rt_a, rt_r);</b>
+<b class="nc"><i class="no-highlight">252</i>&nbsp;        erpat.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">253</i>&nbsp;        ernull.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">254</i>&nbsp;        if(erpat.getParent() != null) ((Pane)erpat.getParent()).getChildren().remove(erpat);</b>
+<b class="nc"><i class="no-highlight">255</i>&nbsp;        if(ernull.getParent() != null) ((Pane)ernull.getParent()).getChildren().remove(ernull);</b>
+<b class="nc"><i class="no-highlight">256</i>&nbsp;        logzan.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">257</i>&nbsp;        reg_us = user;</b>
+<b class="nc"><i class="no-highlight">258</i>&nbsp;        r_log.setText(user.getUsername());</b>
+<b class="nc"><i class="no-highlight">259</i>&nbsp;        r_par.setText(user.getPassword());</b>
+<b class="nc"><i class="no-highlight">260</i>&nbsp;        r_conf_par.setText(user.getPassword());</b>
+<b class="nc"><i class="no-highlight">261</i>&nbsp;        ico = user.getIcons();</b>
+<b class="nc"><i class="no-highlight">262</i>&nbsp;        switch (ico) {</b>
+<b class="nc"><i class="no-highlight">263</i>&nbsp;            case 0 -&gt; rad1();</b>
+<b class="nc"><i class="no-highlight">264</i>&nbsp;            case 1 -&gt; rad2();</b>
+<b class="nc"><i class="no-highlight">265</i>&nbsp;            case 2 -&gt; rad3();</b>
+<i class="no-highlight">266</i>&nbsp;        }
+<i class="no-highlight">267</i>&nbsp;    }
+<i class="no-highlight">268</i>&nbsp;
+<i class="no-highlight">269</i>&nbsp;    public void unnext_list()
+<i class="no-highlight">270</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">271</i>&nbsp;        if(id &gt; 0) id--;</b>
+<b class="nc"><i class="no-highlight">272</i>&nbsp;            else id = imageViews.size()-1;</b>
+<b class="nc"><i class="no-highlight">273</i>&nbsp;        ch_news();</b>
+<i class="no-highlight">274</i>&nbsp;    }
+<i class="no-highlight">275</i>&nbsp;
+<i class="no-highlight">276</i>&nbsp;    public void next_list()
+<i class="no-highlight">277</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">278</i>&nbsp;        if(id &lt; imageViews.size()-1) id++;</b>
+<b class="nc"><i class="no-highlight">279</i>&nbsp;            else id = 0;</b>
+<b class="nc"><i class="no-highlight">280</i>&nbsp;        ch_news();</b>
+<i class="no-highlight">281</i>&nbsp;    }
+<i class="no-highlight">282</i>&nbsp;
+<i class="no-highlight">283</i>&nbsp;    private void ch_news()
+<i class="no-highlight">284</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">285</i>&nbsp;        act_pane.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">286</i>&nbsp;        hbox.setStyle(&quot;-fx-background-color: #d8d8d8&quot;);</b>
+<b class="nc"><i class="no-highlight">287</i>&nbsp;        act_pane = imageViews.get(id);</b>
+<b class="nc"><i class="no-highlight">288</i>&nbsp;        hbox = bhox.get(id);</b>
+<b class="nc"><i class="no-highlight">289</i>&nbsp;        hbox.setStyle(&quot;-fx-background-color:  #cd4e45&quot;);</b>
+<b class="nc"><i class="no-highlight">290</i>&nbsp;        act_pane.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">291</i>&nbsp;        timeline.stop();</b>
+<b class="nc"><i class="no-highlight">292</i>&nbsp;        timeline.play();</b>
+<i class="no-highlight">293</i>&nbsp;    }
+<i class="no-highlight">294</i>&nbsp;
+<i class="no-highlight">295</i>&nbsp;    public void onmov()
+<i class="no-highlight">296</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">297</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">298</i>&nbsp;        kv.add(new KeyValue(left_mov.opacityProperty(), 1, inter));</b>
+<b class="nc"><i class="no-highlight">299</i>&nbsp;        kv.add(new KeyValue(right_mov.opacityProperty(), 1, inter));</b>
+<b class="nc"><i class="no-highlight">300</i>&nbsp;        played(kv, 300);</b>
+<i class="no-highlight">301</i>&nbsp;    }
+<i class="no-highlight">302</i>&nbsp;
+<i class="no-highlight">303</i>&nbsp;    public void nemov()
+<i class="no-highlight">304</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">305</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">306</i>&nbsp;        kv.add(new KeyValue(left_mov.opacityProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">307</i>&nbsp;        kv.add(new KeyValue(right_mov.opacityProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">308</i>&nbsp;        played(kv, 300);</b>
+<i class="no-highlight">309</i>&nbsp;    }
+<i class="no-highlight">310</i>&nbsp;
+<i class="no-highlight">311</i>&nbsp;    public void toreg()
+<i class="no-highlight">312</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">313</i>&nbsp;        destr_auth();</b>
+<b class="nc"><i class="no-highlight">314</i>&nbsp;        login = false;</b>
+<b class="nc"><i class="no-highlight">315</i>&nbsp;        reg.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">316</i>&nbsp;        rotate_this(rt_a, rt_r);</b>
+<b class="nc"><i class="no-highlight">317</i>&nbsp;        erpat.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">318</i>&nbsp;        ernull.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">319</i>&nbsp;        if(erpat.getParent() != null) ((Pane)erpat.getParent()).getChildren().remove(erpat);</b>
+<b class="nc"><i class="no-highlight">320</i>&nbsp;        if(ernull.getParent() != null) ((Pane)ernull.getParent()).getChildren().remove(ernull);</b>
+<i class="no-highlight">321</i>&nbsp;    }
+<i class="no-highlight">322</i>&nbsp;
+<i class="no-highlight">323</i>&nbsp;    public void toauth()
+<i class="no-highlight">324</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">325</i>&nbsp;        destr_reg();</b>
+<b class="nc"><i class="no-highlight">326</i>&nbsp;        login = true;</b>
+<b class="nc"><i class="no-highlight">327</i>&nbsp;        auth.setVisible(true);</b>
+<b class="nc"><i class="no-highlight">328</i>&nbsp;        rotate_this(rt_r, rt_a);</b>
+<b class="nc"><i class="no-highlight">329</i>&nbsp;        erpat.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">330</i>&nbsp;        ernull.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">331</i>&nbsp;        if(erpat.getParent() != null) ((Pane)erpat.getParent()).getChildren().remove(erpat);</b>
+<b class="nc"><i class="no-highlight">332</i>&nbsp;        if(ernull.getParent() != null) ((Pane)ernull.getParent()).getChildren().remove(ernull);</b>
+<i class="no-highlight">333</i>&nbsp;    }
+<i class="no-highlight">334</i>&nbsp;
+<i class="no-highlight">335</i>&nbsp;    public void onreg()
+<i class="no-highlight">336</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">337</i>&nbsp;        boolean stat1 = getstat(r_log);</b>
+<b class="nc"><i class="no-highlight">338</i>&nbsp;        boolean stat2 = getstat(r_par);</b>
+<b class="nc"><i class="no-highlight">339</i>&nbsp;        boolean stat3 = getstat(r_conf_par);</b>
+<b class="nc"><i class="no-highlight">340</i>&nbsp;        if(stat1 &amp;&amp; stat2 &amp;&amp; stat3)</b>
+<i class="no-highlight">341</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">342</i>&nbsp;            if(dataImpl.getuser(r_log.getText()) != null)</b>
+<i class="no-highlight">343</i>&nbsp;            {
+<b class="nc"><i class="no-highlight">344</i>&nbsp;                logzan.setVisible(true);</b>
+<i class="no-highlight">345</i>&nbsp;                return;
+<i class="no-highlight">346</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">347</i>&nbsp;            logzan.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">348</i>&nbsp;            if(!r_par.getText().equals(r_conf_par.getText()))</b>
+<i class="no-highlight">349</i>&nbsp;            {
+<b class="nc"><i class="no-highlight">350</i>&nbsp;                povpar.setVisible(true);</b>
+<i class="no-highlight">351</i>&nbsp;                return;
+<i class="no-highlight">352</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">353</i>&nbsp;            povpar.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">354</i>&nbsp;            if(reg_us == null) {</b>
+<b class="nc"><i class="no-highlight">355</i>&nbsp;                User user = new User();</b>
+<b class="nc"><i class="no-highlight">356</i>&nbsp;                user.setUsername(r_log.getText());</b>
+<b class="nc"><i class="no-highlight">357</i>&nbsp;                user.setPassword(r_par.getText());</b>
+<b class="nc"><i class="no-highlight">358</i>&nbsp;                user.setIcons(ico);</b>
+<i class="no-highlight">359</i>&nbsp;                //user.setSohr(1);
+<b class="nc"><i class="no-highlight">360</i>&nbsp;                if(!ModelController.inet) Start.off_reg.add(r_log.getText());</b>
+<b class="nc"><i class="no-highlight">361</i>&nbsp;                dataImpl.addorsave(user);</b>
+<b class="nc"><i class="no-highlight">362</i>&nbsp;                toauth();</b>
+<b class="nc"><i class="no-highlight">363</i>&nbsp;            } else {</b>
+<b class="nc"><i class="no-highlight">364</i>&nbsp;                Start.off_reg.remove(reg_us.getUsername());</b>
+<b class="nc"><i class="no-highlight">365</i>&nbsp;                reg_us.setUsername(r_log.getText());</b>
+<b class="nc"><i class="no-highlight">366</i>&nbsp;                reg_us.setPassword(r_par.getText());</b>
+<b class="nc"><i class="no-highlight">367</i>&nbsp;                reg_us.setIcons(ico);</b>
+<b class="nc"><i class="no-highlight">368</i>&nbsp;                dataImpl.addorsave(reg_us);</b>
+<b class="nc"><i class="no-highlight">369</i>&nbsp;                toauth();</b>
+<b class="nc"><i class="no-highlight">370</i>&nbsp;                neWarn(net_reg);</b>
+<b class="nc"><i class="no-highlight">371</i>&nbsp;                reg_us = null;</b>
+<i class="no-highlight">372</i>&nbsp;            }
+<i class="no-highlight">373</i>&nbsp;        }
+<i class="no-highlight">374</i>&nbsp;    }
+<i class="no-highlight">375</i>&nbsp;
+<i class="no-highlight">376</i>&nbsp;    public void ranpar()
+<i class="no-highlight">377</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">378</i>&nbsp;        ranpar(new PasswordField[]{r_par, r_conf_par});</b>
+<i class="no-highlight">379</i>&nbsp;    }
+<i class="no-highlight">380</i>&nbsp;
+<i class="no-highlight">381</i>&nbsp;    public void onauth() throws IOException {
+<b class="nc"><i class="no-highlight">382</i>&nbsp;        boolean stat1 = getstat(a_log);</b>
+<b class="nc"><i class="no-highlight">383</i>&nbsp;        boolean stat2 = getstat(a_par);</b>
+<b class="nc"><i class="no-highlight">384</i>&nbsp;        if(stat1 &amp;&amp; stat2)</b>
+<i class="no-highlight">385</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">386</i>&nbsp;            boolean chek = dataImpl.checkpar(a_log.getText(), a_par.getText());</b>
+<b class="nc"><i class="no-highlight">387</i>&nbsp;            if(!chek)</b>
+<i class="no-highlight">388</i>&nbsp;            {
+<b class="nc"><i class="no-highlight">389</i>&nbsp;                nevlog.setVisible(true);</b>
+<i class="no-highlight">390</i>&nbsp;            }else{
+<b class="nc"><i class="no-highlight">391</i>&nbsp;                Start.usename = a_log.getText();</b>
+<b class="nc"><i class="no-highlight">392</i>&nbsp;                Start.close_start();</b>
+<b class="nc"><i class="no-highlight">393</i>&nbsp;                Start.start_scene(&quot;/fxml/project.fxml&quot;);</b>
+<b class="nc"><i class="no-highlight">394</i>&nbsp;                ProjController projController = Start.loader.getController();</b>
+<b class="nc"><i class="no-highlight">395</i>&nbsp;                projController.setPer_rep(per_rep);</b>
+<b class="nc"><i class="no-highlight">396</i>&nbsp;                projController.setPer_reg(per_reg);</b>
+<b class="nc"><i class="no-highlight">397</i>&nbsp;                projController.init();</b>
+<b class="nc"><i class="no-highlight">398</i>&nbsp;                if(this.net_rep.isVisible()) projController.onWarn(projController.net_rep);</b>
+<b class="nc"><i class="no-highlight">399</i>&nbsp;                if(this.net_reg.isVisible()) projController.onWarn(projController.net_reg);</b>
+<i class="no-highlight">400</i>&nbsp;            }
+<i class="no-highlight">401</i>&nbsp;        }
+<i class="no-highlight">402</i>&nbsp;    }
+<i class="no-highlight">403</i>&nbsp;
+<i class="no-highlight">404</i>&nbsp;    private void rotate_this(RotateTransition rt1, RotateTransition rt2)
+<i class="no-highlight">405</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">406</i>&nbsp;        rt1.setByAngle(0);</b>
+<b class="nc"><i class="no-highlight">407</i>&nbsp;        rt1.setToAngle(90);</b>
+<b class="nc"><i class="no-highlight">408</i>&nbsp;        rt2.setByAngle(270);</b>
+<b class="nc"><i class="no-highlight">409</i>&nbsp;        rt2.setToAngle(360);</b>
+<b class="nc"><i class="no-highlight">410</i>&nbsp;        rt1.play();</b>
+<b class="nc"><i class="no-highlight">411</i>&nbsp;        rt2.play();</b>
+<b class="nc"><i class="no-highlight">412</i>&nbsp;        rt2.onFinishedProperty().setValue(this::chvis);</b>
+<i class="no-highlight">413</i>&nbsp;    }
+<i class="no-highlight">414</i>&nbsp;
+<i class="no-highlight">415</i>&nbsp;    private void chvis(ActionEvent actionEvent) {
+<b class="nc"><i class="no-highlight">416</i>&nbsp;        RotateTransition rt = (RotateTransition) actionEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">417</i>&nbsp;        rt.onFinishedProperty().setValue(null);</b>
+<b class="nc"><i class="no-highlight">418</i>&nbsp;        setvis();</b>
+<i class="no-highlight">419</i>&nbsp;    }
+<i class="no-highlight">420</i>&nbsp;
+<i class="no-highlight">421</i>&nbsp;    private void destr_auth()
+<i class="no-highlight">422</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">423</i>&nbsp;        destr_field(a_log);</b>
+<b class="nc"><i class="no-highlight">424</i>&nbsp;        destr_field(a_par);</b>
+<i class="no-highlight">425</i>&nbsp;    }
+<i class="no-highlight">426</i>&nbsp;
+<i class="no-highlight">427</i>&nbsp;    private void destr_reg()
+<i class="no-highlight">428</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">429</i>&nbsp;        destr_field(r_log);</b>
+<b class="nc"><i class="no-highlight">430</i>&nbsp;        destr_field(r_par);</b>
+<b class="nc"><i class="no-highlight">431</i>&nbsp;        destr_field(r_conf_par);</b>
+<i class="no-highlight">432</i>&nbsp;    }
+<i class="no-highlight">433</i>&nbsp;
+<i class="no-highlight">434</i>&nbsp;    private void destr_field(TextField text)
+<i class="no-highlight">435</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">436</i>&nbsp;        text.clear();</b>
+<b class="nc"><i class="no-highlight">437</i>&nbsp;        list_nonlat.remove(text.getId());</b>
+<b class="nc"><i class="no-highlight">438</i>&nbsp;        list_null.remove(text.getId());</b>
+<i class="no-highlight">439</i>&nbsp;    }
+<i class="no-highlight">440</i>&nbsp;
+<i class="no-highlight">441</i>&nbsp;    private void setvis()
+<i class="no-highlight">442</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">443</i>&nbsp;        auth.setVisible(login);</b>
+<b class="nc"><i class="no-highlight">444</i>&nbsp;        reg.setVisible(!login);</b>
+<i class="no-highlight">445</i>&nbsp;    }
+<i class="no-highlight">446</i>&nbsp;
+<i class="no-highlight">447</i>&nbsp;    private void caps(KeyEvent keyEvent)
+<i class="no-highlight">448</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">449</i>&nbsp;        if(keyEvent.getCode() == KeyCode.CAPS) {</b>
+<b class="nc"><i class="no-highlight">450</i>&nbsp;            caps_lock = !caps_lock;</b>
+<b class="nc"><i class="no-highlight">451</i>&nbsp;            set_caps();</b>
+<i class="no-highlight">452</i>&nbsp;        }
+<i class="no-highlight">453</i>&nbsp;    }
+<i class="no-highlight">454</i>&nbsp;
+<i class="no-highlight">455</i>&nbsp;    private void set_caps()
+<i class="no-highlight">456</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">457</i>&nbsp;        r_caps.setVisible(caps_lock);</b>
+<b class="nc"><i class="no-highlight">458</i>&nbsp;        l_caps.setVisible(caps_lock);</b>
+<i class="no-highlight">459</i>&nbsp;    }
+<i class="no-highlight">460</i>&nbsp;
+<i class="no-highlight">461</i>&nbsp;    public void onUp(MouseEvent mouseEvent)
+<i class="no-highlight">462</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">463</i>&nbsp;        Pane pane = (Pane) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">464</i>&nbsp;        Glow glow = (Glow) pane.getEffect();</b>
+<b class="nc"><i class="no-highlight">465</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">466</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0.75, inter));</b>
+<b class="nc"><i class="no-highlight">467</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">468</i>&nbsp;    }
+<i class="no-highlight">469</i>&nbsp;
+<i class="no-highlight">470</i>&nbsp;    public void neUp(MouseEvent mouseEvent)
+<i class="no-highlight">471</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">472</i>&nbsp;        Pane pane = (Pane) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">473</i>&nbsp;        Glow glow = (Glow) pane.getEffect();</b>
+<b class="nc"><i class="no-highlight">474</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">475</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">476</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">477</i>&nbsp;    }
+<i class="no-highlight">478</i>&nbsp;
+<i class="no-highlight">479</i>&nbsp;    public void onPU(MouseEvent mouseEvent)
+<i class="no-highlight">480</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">481</i>&nbsp;        Pane pane = (Pane) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">482</i>&nbsp;        Glow glow = (Glow) pane.getEffect();</b>
+<b class="nc"><i class="no-highlight">483</i>&nbsp;        DropShadow dropShadow = (DropShadow) glow.getInput();</b>
+<b class="nc"><i class="no-highlight">484</i>&nbsp;        InnerShadow innerShadow = (InnerShadow) dropShadow.getInput();</b>
+<b class="nc"><i class="no-highlight">485</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">486</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 1, inter));</b>
+<b class="nc"><i class="no-highlight">487</i>&nbsp;        kv.add(new KeyValue(dropShadow.colorProperty(), Color.web(&quot;#000&quot;,0), inter));</b>
+<b class="nc"><i class="no-highlight">488</i>&nbsp;        kv.add(new KeyValue(innerShadow.colorProperty(), Color.web(&quot;#000&quot;,1.0), inter));</b>
+<b class="nc"><i class="no-highlight">489</i>&nbsp;        kv.add(new KeyValue(innerShadow.chokeProperty(), 0.3, inter));</b>
+<b class="nc"><i class="no-highlight">490</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">491</i>&nbsp;    }
+<i class="no-highlight">492</i>&nbsp;
+<i class="no-highlight">493</i>&nbsp;    public void nePU(MouseEvent mouseEvent)
+<i class="no-highlight">494</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">495</i>&nbsp;        Pane pane = (Pane) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">496</i>&nbsp;        Glow glow = (Glow) pane.getEffect();</b>
+<b class="nc"><i class="no-highlight">497</i>&nbsp;        DropShadow dropShadow = (DropShadow) glow.getInput();</b>
+<b class="nc"><i class="no-highlight">498</i>&nbsp;        InnerShadow innerShadow = (InnerShadow) dropShadow.getInput();</b>
+<b class="nc"><i class="no-highlight">499</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">500</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">501</i>&nbsp;        kv.add(new KeyValue(dropShadow.colorProperty(), Color.web(&quot;#000&quot;,1), inter));</b>
+<b class="nc"><i class="no-highlight">502</i>&nbsp;        kv.add(new KeyValue(innerShadow.colorProperty(), Color.web(&quot;#000&quot;,0), inter));</b>
+<b class="nc"><i class="no-highlight">503</i>&nbsp;        kv.add(new KeyValue(innerShadow.chokeProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">504</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">505</i>&nbsp;    }
+<i class="no-highlight">506</i>&nbsp;
+<i class="no-highlight">507</i>&nbsp;    public void onGo(MouseEvent mouseEvent)
+<i class="no-highlight">508</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">509</i>&nbsp;        ImageView im = (ImageView) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">510</i>&nbsp;        Glow glow = (Glow) im.getEffect();</b>
+<b class="nc"><i class="no-highlight">511</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">512</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0.75, inter));</b>
+<b class="nc"><i class="no-highlight">513</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">514</i>&nbsp;    }
+<i class="no-highlight">515</i>&nbsp;
+<i class="no-highlight">516</i>&nbsp;    public void neGo(MouseEvent mouseEvent)
+<i class="no-highlight">517</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">518</i>&nbsp;        ImageView im = (ImageView) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">519</i>&nbsp;        Glow glow = (Glow) im.getEffect();</b>
+<b class="nc"><i class="no-highlight">520</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">521</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">522</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">523</i>&nbsp;    }
+<i class="no-highlight">524</i>&nbsp;
+<i class="no-highlight">525</i>&nbsp;    public void onPG(MouseEvent mouseEvent)
+<i class="no-highlight">526</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">527</i>&nbsp;        ImageView im = (ImageView) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">528</i>&nbsp;        Glow glow = (Glow) im.getEffect();</b>
+<b class="nc"><i class="no-highlight">529</i>&nbsp;        DropShadow dropShadow = (DropShadow) glow.getInput();</b>
+<b class="nc"><i class="no-highlight">530</i>&nbsp;        InnerShadow innerShadow = (InnerShadow) dropShadow.getInput();</b>
+<b class="nc"><i class="no-highlight">531</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">532</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">533</i>&nbsp;            kv.add(new KeyValue(glow.levelProperty(), Objects.equals(im.getId().split(&quot;_&quot;)[1], &quot;mov&quot;) ? 0 : 1, inter));</b>
+<b class="nc"><i class="no-highlight">534</i>&nbsp;        } catch (NullPointerException e){}</b>
+<b class="nc"><i class="no-highlight">535</i>&nbsp;        kv.add(new KeyValue(dropShadow.colorProperty(), Color.web(&quot;#000&quot;,0), inter));</b>
+<b class="nc"><i class="no-highlight">536</i>&nbsp;        kv.add(new KeyValue(innerShadow.colorProperty(), Color.web(&quot;#000&quot;,1.0), inter));</b>
+<b class="nc"><i class="no-highlight">537</i>&nbsp;        kv.add(new KeyValue(innerShadow.chokeProperty(), 0.3, inter));</b>
+<b class="nc"><i class="no-highlight">538</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">539</i>&nbsp;    }
+<i class="no-highlight">540</i>&nbsp;
+<i class="no-highlight">541</i>&nbsp;    public void nePG(MouseEvent mouseEvent)
+<i class="no-highlight">542</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">543</i>&nbsp;        ImageView im = (ImageView) mouseEvent.getSource();</b>
+<b class="nc"><i class="no-highlight">544</i>&nbsp;        Glow glow = (Glow) im.getEffect();</b>
+<b class="nc"><i class="no-highlight">545</i>&nbsp;        DropShadow dropShadow = (DropShadow) glow.getInput();</b>
+<b class="nc"><i class="no-highlight">546</i>&nbsp;        InnerShadow innerShadow = (InnerShadow) dropShadow.getInput();</b>
+<b class="nc"><i class="no-highlight">547</i>&nbsp;        List&lt;KeyValue&gt; kv = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">548</i>&nbsp;        kv.add(new KeyValue(glow.levelProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">549</i>&nbsp;        kv.add(new KeyValue(dropShadow.colorProperty(), Color.web(&quot;#000&quot;,0.75), inter));</b>
+<b class="nc"><i class="no-highlight">550</i>&nbsp;        kv.add(new KeyValue(innerShadow.colorProperty(), Color.web(&quot;#000&quot;,0), inter));</b>
+<b class="nc"><i class="no-highlight">551</i>&nbsp;        kv.add(new KeyValue(innerShadow.chokeProperty(), 0, inter));</b>
+<b class="nc"><i class="no-highlight">552</i>&nbsp;        played(kv, 100);</b>
+<i class="no-highlight">553</i>&nbsp;    }
+<i class="no-highlight">554</i>&nbsp;
+<i class="no-highlight">555</i>&nbsp;    public void browse_rsl() throws URISyntaxException, IOException {
+<b class="nc"><i class="no-highlight">556</i>&nbsp;        Desktop d = Desktop.getDesktop();</b>
+<b class="nc"><i class="no-highlight">557</i>&nbsp;        d.browse(new URI(&quot;https://www.rsl.ru/&quot;));</b>
+<i class="no-highlight">558</i>&nbsp;    }
+<i class="no-highlight">559</i>&nbsp;
+<i class="no-highlight">560</i>&nbsp;    public void down()
+<i class="no-highlight">561</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">562</i>&nbsp;        Platform.runLater(() -&gt; scrpan.setVvalue(1D));</b>
+<i class="no-highlight">563</i>&nbsp;    }
+<i class="no-highlight">564</i>&nbsp;
+<i class="no-highlight">565</i>&nbsp;    public void up()
+<i class="no-highlight">566</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">567</i>&nbsp;        Platform.runLater(() -&gt; scrpan.setVvalue(0.0));</b>
+<i class="no-highlight">568</i>&nbsp;    }
+<i class="no-highlight">569</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-06-23 18:59</div>
+</div>
+</body>
+</html>

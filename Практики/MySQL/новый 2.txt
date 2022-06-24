@@ -15,6 +15,7 @@ CREATE TABLE Пользователь
 (
 	Код_пользователя     INTEGER AUTO_INCREMENT,
 	Код_паспорта         INTEGER NOT NULL,
+	Номер_иконки         INTEGER NOT NULL,
 	Имя_пользователя     TEXT NULL,
 	Пароль               TEXT NULL,
 	Телефон              TEXT NULL,

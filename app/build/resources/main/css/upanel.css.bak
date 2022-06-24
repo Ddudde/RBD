@@ -1,0 +1,4 @@
+.panel {
+	-fx-border-color: #c1c1c1;
+	-fx-border-insets: -1 -1 0 0;
+}
