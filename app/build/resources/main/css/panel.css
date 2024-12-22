@@ -1,9 +1,0 @@
-.panel {
-	-fx-border-color: gray;
-	-fx-border-insets: -1 -1 0 0;
-}
-
-.panel_adm {
-	-fx-border-color: red;
-	-fx-border-insets: -1 -1 0 0;
-}
