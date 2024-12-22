@@ -14,7 +14,7 @@ CREATE TABLE Паспортные_данные
 CREATE TABLE Пользователь
 (
 	Код_пользователя     INTEGER AUTO_INCREMENT,
-	Код_паспорта         INTEGER NOT NULL,
+	Код_паспорта         INTEGER NULL,
 	Номер_иконки         INTEGER NOT NULL,
 	Имя_пользователя     TEXT NULL,
 	Пароль               TEXT NULL,
